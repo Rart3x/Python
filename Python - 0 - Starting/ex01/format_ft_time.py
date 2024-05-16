@@ -24,9 +24,7 @@ seconds_since_1970 = timesince70.total_seconds()
 formatted_seconds_commas = "{:,.4f}".format(seconds_since_1970)
 formatted_seconds_sci = "{:.4e}".format(seconds_since_1970)
 
-print("Seconds since January 1, 1970:", formatted_seconds_commas, "or", formatted_seconds_sci)
-
-##############################################################
+print("Seconds since January 1, 1970:", formatted_seconds_commas, "or", formatted_seconds_sci, "in scientific notation")
 
 today = datetime.date.today()
 month = check_month(today.month)
