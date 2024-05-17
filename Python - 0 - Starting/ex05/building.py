@@ -54,7 +54,7 @@ def main():
     '''Main'''
 
     arg = check_args(sys.argv)
-    if arg == None:
+    if arg is None:
         print_nb_carac(count_carac(sys.argv[1]))
     else:
         print_nb_carac(count_carac(arg))
