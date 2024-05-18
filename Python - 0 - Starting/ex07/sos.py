@@ -1,4 +1,4 @@
-import sys
+from sys import sys
 
 
 def isstr(arg: any) -> bool:
@@ -19,6 +19,7 @@ def check_args(argv: list) -> tuple:
     str_bool = isstr(argv[1])
 
     assert str_bool is True, "The arguments are bad"
+
 
 def fill_dict() -> dict:
     '''Fill the Morse code dictionary'''

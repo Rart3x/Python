@@ -1,4 +1,4 @@
-import sys
+from sys import argv
 
 
 def check_args(argv):
@@ -53,9 +53,9 @@ def print_nb_carac(arr) -> []:
 def main():
     '''Main'''
 
-    arg = check_args(sys.argv)
+    arg = check_args(argv)
     if arg is None:
-        print_nb_carac(count_carac(sys.argv[1]))
+        print_nb_carac(count_carac(argv[1]))
     else:
         print_nb_carac(count_carac(arg))
 

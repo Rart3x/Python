@@ -1,5 +1,4 @@
-import sys
-
+from sys import argv
 
 def isstr(arg: any) -> bool:
     '''Isalpha() including spaces'''
@@ -42,8 +41,8 @@ def output(argv: list, tup: tuple) -> None:
 def main():
     '''Main'''
 
-    tup = check_args(sys.argv)
-    output(sys.argv, tup)
+    tup = check_args(argv)
+    output(argv, tup)
 
 
 if __name__ == "__main__":
