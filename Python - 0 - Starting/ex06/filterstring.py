@@ -22,7 +22,7 @@ def check_args(argv: list) -> tuple:
     for i in argv:
         if i.isdigit():
             integer = int(i)
-        elif isinstance(i, str):
+        elif isstr(i):
             string = i
 
     assert string is not None and integer is not None, "The arguments are bad"
