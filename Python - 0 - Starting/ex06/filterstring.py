@@ -1,30 +1,49 @@
 import sys
 
 
-def check_args(argv):
-    '''Check the arguments'''
+def isstr(arg: any) -> bool:
+    '''Isalpha() including spaces'''
 
-    str_bool = 0
-    int_bool = 0
+    for i in arg:
+        if i != ' ':
+            if not i.isalpha():
+                return False
+    return True
 
-    assert len(argv) == 3, "the arguments are bad"
 
-    if argv[1].isdigit() or argv[2].isdigit():
-        int_bool = 1
+def check_args(argv: list) -> tuple:
+    '''Check args conformity'''
 
-    if argv[1].isalpha() or argv[2].isalpha():
-        str_bool = 1
+    string = None
+    integer = None
 
-    print("str_bool: ", str_bool)
-    print("int_bool: ", int_bool)
-    
-    assert str_bool == 1 and int_bool == 1, "the arguments are bad"
+    assert len(argv) == 3, "The arguments are bad"
+
+    for i in argv:
+        if i.isdigit():
+            integer = int(i)
+        elif isinstance(i, str):
+            string = i
+
+    assert string is not None and integer is not None, "The arguments are bad"
+
+    return (string, integer)
+
+
+def output(argv: list, tup: tuple) -> None:
+    '''Output'''
+
+    arr = tup[0].split(' ')
+    final_arr = [i for i in arr if len(i) > tup[1]]
+
+    print(final_arr)
 
 
 def main():
     '''Main'''
 
-    check_args(sys.argv)
+    tup = check_args(sys.argv)
+    output(sys.argv, tup)
 
 
 if __name__ == "__main__":
