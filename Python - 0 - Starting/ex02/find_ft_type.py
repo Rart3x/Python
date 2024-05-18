@@ -1,4 +1,4 @@
-def all_thing_is_obj(object : any) -> int:
+def all_thing_is_obj(object: any) -> int:
     match type(object).__name__:
         case "str":
             print(object, "is in the kitchen", ":", type(object))
@@ -11,5 +11,5 @@ def all_thing_is_obj(object : any) -> int:
         case "None":
             print("Type not found")
         case _:
-            print(type(object).__name__.capitalize(), ":" ,type(object))
+            print(type(object).__name__.capitalize(), ":", type(object))
     return 42

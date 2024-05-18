@@ -1,7 +1,7 @@
 ft_list = ["Hello", "tata!"]
 ft_tuple = ("Hello", "toto!")
 ft_set = {"Hello", "tutu!"}
-ft_dict = {"Hello" : "titi!"}
+ft_dict = {"Hello": "titi!"}
 
 world = "World"
 country = "France"
@@ -14,10 +14,10 @@ tmp_list = list(ft_tuple)
 tmp_list[1] = country
 ft_tuple = tuple(tmp_list)
 
-set_content = [ "Hello", city]
+set_content = ["Hello", city]
 ft_set = set(set_content)
 
-ft_dict.update({ "Hello" : school})
+ft_dict.update({"Hello": school})
 
 print(ft_list)
 print(ft_tuple)

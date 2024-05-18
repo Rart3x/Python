@@ -1,5 +1,6 @@
 from sys import argv
 
+
 def isstr(arg: any) -> bool:
     '''Isalpha() including spaces'''
 

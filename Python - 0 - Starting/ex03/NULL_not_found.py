@@ -1,4 +1,4 @@
-def NULL_not_found(object : any) -> int:
+def NULL_not_found(object: any) -> int:
     match type(object).__name__:
         case "bool":
             print(object, end=" ")
@@ -18,5 +18,5 @@ def NULL_not_found(object : any) -> int:
                     return 1
 
     print(type(object))
-    
+
     return 0
