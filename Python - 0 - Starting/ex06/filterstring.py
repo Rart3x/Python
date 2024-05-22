@@ -17,7 +17,11 @@ def check_args(argv: list) -> tuple:
     string = None
     integer = None
 
-    assert len(argv) == 3, "The arguments are bad"
+    try:
+        assert len(argv) == 3, "The arguments are bad"
+    except AssertionError:
+        print("AssertionError: The arguments are bad")
+        exit()
 
     for i in argv:
         if i.isdigit():
@@ -25,7 +29,14 @@ def check_args(argv: list) -> tuple:
         elif isstr(i):
             string = i
 
-    assert string is not None and integer is not None, "The arguments are bad"
+    try:
+        assert (
+            string is not None
+            and integer is not None
+        ), "The arguments are bad"
+    except AssertionError:
+        print("AssertionError: The arguments are bad")
+        exit()
 
     return (string, integer)
 

@@ -1,20 +1,20 @@
 def NULL_not_found(object: any) -> int:
     match type(object).__name__:
         case "bool":
-            print(object, end=" ")
+            print("Fake:", object, end=" ")
         case "int":
-            print(object, end=" ")
+            print("Zero:", object, end=" ")
         case "float":
-            print("nan", end=" ")
+            print("Cheese: nan", end=" ")
         case "NoneType":
-            print("None", end=" ")
+            print("Nothing: None", end=" ")
         case "str":
             match object:
                 case "":
-                    print(type(object))
+                    print("Empty:", type(object))
                     return 0
                 case _:
-                    print("Type not Found", type(object))
+                    print("Type not Found")
                     return 1
 
     print(type(object))

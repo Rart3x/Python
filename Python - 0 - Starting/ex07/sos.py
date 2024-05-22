@@ -14,11 +14,17 @@ def isstr(arg: any) -> bool:
 def check_args(argv: list) -> tuple:
     '''Check args conformity'''
 
-    assert len(argv) == 2, "The arguments are bad"
+    try:
+        assert len(argv) == 2, "The arguments are bad"
+    except AssertionError:
+        print("AssertionError: The arguments are bad")
 
     str_bool = isstr(argv[1])
 
-    assert str_bool is True, "The arguments are bad"
+    try:
+        assert str_bool is True, "The arguments are bad"
+    except AssertionError:
+        print("AssertionError: The arguments are bad")
 
 
 def fill_dict() -> dict:

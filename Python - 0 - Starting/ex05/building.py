@@ -6,9 +6,11 @@ def check_args(argv):
 
     if (len(argv) < 2):
         return (input("What is the text to count\n"))
-    assert len(argv) == 2, "Please provide a simple string"
-
-    return None
+    try:
+        assert len(argv) == 2, "Please provide a simple string"
+    except AssertionError:
+        print("AssertionError: Please provide a simple string")
+        return None
 
 
 def count_carac(str):
