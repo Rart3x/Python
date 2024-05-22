@@ -8,12 +8,20 @@ def give_bmi(
     assert len(height) == len(weight), "list must have the same size"
 
     for h, w in zip(height, weight):
-        assert (isinstance(h, float) or isinstance(h, int)), (
-            "All elements in height must be floats or int"
-        )
-        assert (isinstance(w, float) or isinstance(w, int)), (
-            "All elements in weight must be floats or int"
-        )
+        try:
+            assert (isinstance(h, float) or isinstance(h, int)), (
+                "All elements in height must be floats or int"
+            )
+        except AssertionError:
+            print("All elements in height must be floats or int")
+            exit()
+        try:
+            assert (isinstance(w, float) or isinstance(w, int)), (
+                "All elements in weight must be floats or int"
+            )
+        except AssertionError:
+            print("All elements in weight must be floats or int")
+            exit()
 
     arr = []
 
@@ -27,9 +35,13 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     '''True if an element is above limit value, otherwise False'''
 
     for b in bmi:
-        assert isinstance("test", float) or isinstance("test", int), (
-            "All elements in height must be floats or int"
-        )
+        try:
+            assert isinstance("test", float) or isinstance("test", int), (
+                "All elements in height must be floats or int"
+            )
+        except AssertionError:
+            print("All elements in height must be floats or int")
+            exit()
 
     arr = []
 
@@ -44,14 +56,6 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
 def main():
     '''Main'''
-
-    height = [2.71, 1.15, 5]
-    weight = [165.3, 38.4, 10]
-
-    bmi = give_bmi(height, weight)
-
-    print(bmi, type(bmi))
-    print(apply_limit(bmi, 26))
 
 
 if __name__ == "__main__":

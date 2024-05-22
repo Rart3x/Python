@@ -1,6 +1,8 @@
 from PIL import Image
 import numpy as np
 
+from zoom import display_zoomed
+
 
 def ft_load(path: str) -> []:
     '''Load image'''
@@ -30,6 +32,9 @@ def ft_load(path: str) -> []:
 
 def main():
     '''Main'''
+
+    print(ft_load("animal.jpeg"))
+    display_zoomed("animal.jpeg")
 
 
 if __name__ == "__main__":
