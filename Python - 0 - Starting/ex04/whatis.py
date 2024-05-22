@@ -21,7 +21,7 @@ except AssertionError:
     print("AssertionError: argument is not an integer")
     exit()
 
-if (int)(argv[1]) >= 0:
+if ((int)(argv[1]) % 2) == 0:
     print("I'm Even.")
 else:
     print("I'm Odd.")

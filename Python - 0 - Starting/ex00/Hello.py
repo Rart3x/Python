@@ -3,9 +3,9 @@ ft_tuple = ("Hello", "toto!")
 ft_set = {"Hello", "tutu!"}
 ft_dict = {"Hello": "titi!"}
 
-world = "World"
-country = "France"
-city = "Angoulême"
+world = "World!"
+country = "France!"
+city = "Angoulême!"
 school = "42" + city
 
 ft_list[1] = world

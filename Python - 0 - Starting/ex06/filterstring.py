@@ -43,10 +43,11 @@ def check_args(argv: list) -> tuple:
 
 def output(argv: list, tup: tuple) -> None:
     '''Output'''
-
+    
     arr = tup[0].split(' ')
-    final_arr = [i for i in arr if len(i) > tup[1]]
 
+    final_arr = [i for i in arr if (lambda i: len(i) > tup[1])(i)]
+    
     print(final_arr)
 
 

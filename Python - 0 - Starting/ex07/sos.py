@@ -1,4 +1,4 @@
-from sys import sys
+import sys
 
 
 def isstr(arg: any) -> bool:
