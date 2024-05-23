@@ -36,15 +36,15 @@ def display(path: str) -> None:
 
     plt.imshow(img2, cmap="gray")
 
-    plt.ylim(500, 100)
-    plt.xlim(450, 850)
+    plt.ylim(100, 500)
+    plt.xlim(850, 450)
 
     plt.title("Animal")
     plt.show()
 
 
-def display_zoomed(path: str) -> None:
-    '''Zoom function'''
+def display_rotated(path: str) -> None:
+    '''Rotation function'''
 
     arr, height, width = get_image_as_arr(path)
 
