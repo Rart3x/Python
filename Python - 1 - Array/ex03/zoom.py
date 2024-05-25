@@ -28,27 +28,44 @@ def get_image_as_arr(path: str):
     return arr, height, width
 
 
-def display(path: str) -> None:
-    '''Display image'''
+def zoom(arr: np.array) -> np.array:
+    '''Zoom function'''
 
-    img = mpimg.imread(path)
-    img2 = img[:, :, 1]
+    new_arr = []
 
-    plt.imshow(img2, cmap="gray")
+    for y in range(100, 500):
+        row = []
+        for x in range(450, 850):
+            row.append(arr[y][x])
+        new_arr.append(row)
 
-    plt.ylim(500, 100)
-    plt.xlim(450, 850)
-
-    plt.title("Animal")
-    plt.show()
+    return np.array(new_arr)
 
 
 def display_zoomed(path: str) -> None:
+    '''Display image'''
+
+    img = mpimg.imread(path)
+    img = zoom(img)
+
+    height, width, mode = img.shape
+
+    img2 = img[:, :, 1]
+
+    print(f"\nNew shape after slicing: {width, height, mode} or {img2.shape}")
+    print(img2)
+
+    plt.imshow(img2, cmap="gray")
+
+    plt.title("Animal")
+    # plt.show()
+
+
+def display(path: str) -> None:
     '''Zoom function'''
 
     arr, height, width = get_image_as_arr(path)
-
-    display(path)
+    display_zoomed(path)
 
 
 def main():
