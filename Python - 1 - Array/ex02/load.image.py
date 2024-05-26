@@ -5,8 +5,6 @@ import matplotlib.image as mpimg
 def ft_load(path: str) -> []:
     '''Load image'''
 
-    arr = []
-
     try:
         img = mpimg.imread(path)
     except IOError:
