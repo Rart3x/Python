@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
+import cv2
 
 
 def zoom(arr: np.array) -> np.array:
@@ -8,9 +9,9 @@ def zoom(arr: np.array) -> np.array:
 
     new_arr = []
 
-    for y in range(500, 100):
+    for y in range(100, 500):
         row = []
-        for x in range(850, 450):
+        for x in range(450, 850):
             row.append(arr[y][x])
         new_arr.append(row)
 
@@ -18,16 +19,19 @@ def zoom(arr: np.array) -> np.array:
 
 
 def display(path: str) -> None:
-    '''Display image zoomed'''
+    '''Display image'''
 
     img = mpimg.imread(path)
-    img = zoom(img)
-    img2 = img[:, :, 1]
+    img_resized = zoom(img)
 
-    print("\nNew shape after slicing: ", img2.shape)
-    print(img2)
+    height, width, mode = img_resized.shape
 
-    plt.imshow(img2, cmap="gray")
+    gray_img = cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY)
+
+    print(f"\nNew shape after conversion: {width, height, mode} or {gray_img.shape}")
+    print(gray_img)
+
+    plt.imshow(gray_img, cmap="gray")
 
     plt.title("Animal")
     plt.show()
