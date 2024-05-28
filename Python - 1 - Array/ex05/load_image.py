@@ -15,6 +15,7 @@ def ft_load(path: str) -> []:
     height, width, mode = image_arr.shape
 
     print("The shape of image is :", f"({width}, {height}, {mode})")
+    print(img)
 
     return img
 
