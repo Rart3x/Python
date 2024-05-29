@@ -9,6 +9,7 @@ def slice_me(family: list, start: int, end: int) -> list:
             start >= 0
             and start < len(family)
             and end < len(family)
+            and start < end
         ), "start and end must be valid indexes"
     except AssertionError:
         print("AssertionError: start and end must be valid indexes")
@@ -33,16 +34,6 @@ def slice_me(family: list, start: int, end: int) -> list:
 
 def main():
     '''Main'''
-
-    family = [
-        [1.80, 78.4],
-        [2.15, 102.7],
-        [2.10, 98.5],
-        [1.88, 75.2]
-    ]
-
-    print(slice_me(family, 0, 2))
-    print(slice_me(family, 1, -2))
 
 
 if __name__ == "__main__":

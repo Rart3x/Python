@@ -5,22 +5,26 @@ def give_bmi(
 
     '''Calculate BMI'''
 
-    assert len(height) == len(weight), "list must have the same size"
+    try:
+        assert len(height) == len(weight), "List must have the same size"
+    except AssertionError:
+        print("AssertionError: List must have the same size")
+        exit()
 
     for h, w in zip(height, weight):
         try:
             assert (isinstance(h, float) or isinstance(h, int)), (
-                "All elements in height must be floats or int"
+                "All elements must be floats or int"
             )
         except AssertionError:
-            print("All elements in height must be floats or int")
+            print("AssertionError: All elements must be floats or int")
             exit()
         try:
             assert (isinstance(w, float) or isinstance(w, int)), (
-                "All elements in weight must be floats or int"
+                "All elements must be floats or int"
             )
         except AssertionError:
-            print("All elements in weight must be floats or int")
+            print("AssertionError: All elements must be floats or int")
             exit()
 
     arr = []
@@ -36,11 +40,11 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
     for b in bmi:
         try:
-            assert isinstance("test", float) or isinstance("test", int), (
+            assert isinstance(b, float) or isinstance(b, int), (
                 "All elements in height must be floats or int"
             )
         except AssertionError:
-            print("All elements in height must be floats or int")
+            print("AssertionError: All elements must be floats or int")
             exit()
 
     arr = []

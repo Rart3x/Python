@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from load_image import ft_load
 import cv2
 
 
@@ -59,20 +58,12 @@ def ft_grey(array):
 
     gray = cv2.cvtColor(matrix, cv2.COLOR_BGR2GRAY)
 
-    plt.imshow(gray)
+    plt.imshow(gray, cmap="gray")
     plt.show()
 
 
 def main():
     '''Main'''
-
-    array = ft_load("landscape.jpg")
-
-    # ft_invert(array)
-    # ft_red(array)
-    # ft_green(array)
-    # ft_blue(array)
-    ft_grey(array)
 
 
 if __name__ == "__main__":

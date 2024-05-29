@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
 import cv2
+from load_image import ft_load
 
 
 def zoom(arr: np.array) -> np.array:
@@ -21,14 +22,24 @@ def zoom(arr: np.array) -> np.array:
 def display(path: str) -> None:
     '''Display image'''
 
-    img = mpimg.imread(path)
+    try:
+        img = mpimg.imread(path)
+    except IOError:
+        print(f"Error: opening image path '{path}'")
+        exit()
+
     img_resized = zoom(img)
 
     height, width, mode = img_resized.shape
 
     gray_img = cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY)
 
-    print(f"\nNew shape after conversion: {width, height, mode} or {gray_img.shape}")
+    print(
+        "\nNew shape after slicing: "
+        f"({width}, {height}, {mode}) or "
+        f"{gray_img.shape}"
+    )
+
     print(gray_img)
 
     plt.imshow(gray_img, cmap="gray")
@@ -39,6 +50,9 @@ def display(path: str) -> None:
 
 def main():
     '''Main'''
+
+    print(ft_load("animal.jpeg"))
+    display("animal.jpeg")
 
 
 if __name__ == "__main__":

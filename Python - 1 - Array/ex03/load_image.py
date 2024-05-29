@@ -1,9 +1,8 @@
 import matplotlib.image as mpimg
 import numpy as np
-from zoom import display
 
 
-def ft_load(path: str) -> []:
+def ft_load(path: str) -> np.array:
     '''Load image'''
 
     try:
@@ -15,16 +14,13 @@ def ft_load(path: str) -> []:
     image_arr = np.array(img)
     height, width, mode = image_arr.shape
 
-    print("The shape of image is :", f"({width}, {height}, {mode})")
+    print("The shape of image is :", f"({height}, {width}, {mode})")
 
     return img
 
 
 def main():
     '''Main'''
-
-    print(ft_load("animal.jpeg"))
-    display("animal.jpeg")
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.image as mpimg
 
 
-def ft_load(path: str) -> []:
+def ft_load(path: str) -> np.array:
     '''Load image'''
 
     try:
@@ -21,8 +21,6 @@ def ft_load(path: str) -> []:
 
 def main():
     '''Main'''
-
-    print(ft_load("landscape.jpg"))
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
 import cv2
+from load_image import ft_load
 
 
 def rotate_l(arr: np.array) -> np.array:
@@ -16,7 +17,7 @@ def rotate_l(arr: np.array) -> np.array:
 
     for i, r in enumerate(matrix):
         new_arr[:, i] = matrix[i]
-    
+
     return new_arr
 
 
@@ -37,7 +38,12 @@ def zoom(arr: np.array) -> np.array:
 def display(path: str) -> None:
     '''Display image'''
 
-    img = mpimg.imread(path)
+    try:
+        img = mpimg.imread(path)
+    except IOError:
+        print(f"Error: opening image path '{path}'")
+        exit()
+
     img_resized = zoom(img)
 
     height, width, mode = img_resized.shape
@@ -46,7 +52,7 @@ def display(path: str) -> None:
     gray_img = cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY)
 
     print(
-        f"\nNew shape after conversion: "
+        f"\nNew shape after Transpose: "
         f"{width}, {height}, {mode} or "
         f"{gray_img.shape}"
     )
@@ -60,6 +66,9 @@ def display(path: str) -> None:
 
 def main():
     '''Main'''
+
+    print(ft_load("animal.jpeg"))
+    display("animal.jpeg")
 
 
 if __name__ == "__main__":

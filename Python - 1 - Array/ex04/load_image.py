@@ -1,9 +1,8 @@
 import matplotlib.image as mpimg
 import numpy as np
-from rotate import display
 
 
-def ft_load(path: str) -> []:
+def ft_load(path: str) -> np.array:
     '''Load image'''
 
     try:
@@ -22,9 +21,6 @@ def ft_load(path: str) -> []:
 
 def main():
     '''Main'''
-
-    print(ft_load("animal.jpeg"))
-    display("animal.jpeg")
 
 
 if __name__ == "__main__":
