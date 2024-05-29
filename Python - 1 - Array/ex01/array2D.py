@@ -9,7 +9,6 @@ def slice_me(family: list, start: int, end: int) -> list:
             start >= 0
             and start < len(family)
             and end < len(family)
-            and start < end
         ), "start and end must be valid indexes"
     except AssertionError:
         print("AssertionError: start and end must be valid indexes")
