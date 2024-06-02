@@ -13,9 +13,26 @@ def graph(df: []):
 
     # Filter the DataFrame to keep only data for France and Belgium,
     # then remove the first column (country)
-    france_data = df[df['country'] == 'France'].iloc[:, 1:]
-    belgium_data = df[df['country'] == 'Belgium'].iloc[:, 1:]
+    if 'country' in df.columns:
+        france_data = df[df['country'] == 'France'].iloc[:, 1:]
+    else:
+        print("Error: Any datas for country")
+        exit()
 
+    if france_data.empty:
+        print("Error: Any datas for France")
+        exit()
+
+    if 'country' in df.columns:
+        belgium_data = df[df['country'] == 'Belgium'].iloc[:, 1:]
+    else:
+        print("Error: Any datas for country")
+        exit()
+
+    if france_data.empty:
+        print("Error: Any datas for Belgium")
+        exit()
+    
     # Convert the filtered DataFrame values to flattened numpy arrays
     france_np = france_data.values.flatten()
     belgium_np = belgium_data.values.flatten()

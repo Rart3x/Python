@@ -5,7 +5,16 @@ import matplotlib.pyplot as plt
 def graph(df: []):
     '''Graph function'''
 
-    france_data = df[df['country'] == 'France']
+    if 'country' in df.columns:
+        france_data = df[df['country'] == 'France']
+    else:
+        print("Error: Any datas for country")
+        exit()
+
+    if france_data.empty:
+        print("Error: Any datas for France")
+        exit()
+
     years = france_data.columns[1:]
     life_expectancy = france_data.values[0][1:]
 
