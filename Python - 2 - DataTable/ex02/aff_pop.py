@@ -32,7 +32,7 @@ def graph(df: []):
     if france_data.empty:
         print("Error: Any datas for Belgium")
         exit()
-    
+
     # Convert the filtered DataFrame values to flattened numpy arrays
     france_np = france_data.values.flatten()
     belgium_np = belgium_data.values.flatten()

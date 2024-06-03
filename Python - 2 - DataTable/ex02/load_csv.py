@@ -19,11 +19,3 @@ def load(path: str) -> pd.DataFrame:
     print(f"Loading dataset of dimensions {data.shape}")
 
     return data
-
-
-def main():
-    '''Main'''
-
-
-if __name__ == "__main__":
-    main()
