@@ -11,6 +11,7 @@ class calculator:
             total += V1[i] + V2[i]
         print("Dot product is:", total)
 
+    @staticmethod
     def add_vec(V1: list[float], V2: list[float]) -> None:
         '''Add Vec calculator method'''
 
@@ -20,6 +21,7 @@ class calculator:
             vec[i] += V1[i] + V2[i]
         print("Add Vector is:", vec)
 
+    @staticmethod
     def sous_vec(V1: list[float], V2: list[float]) -> None:
         '''Sous Vec calculator method'''
 
