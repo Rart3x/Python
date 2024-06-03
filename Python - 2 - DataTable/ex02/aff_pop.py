@@ -3,8 +3,14 @@ import matplotlib.pyplot as plt
 
 
 def truncate(k: str) -> float:
-    if k.endswith("M") or k.endswith("k"):
-        return float(k[:-1])
+    '''Truncate function'''
+
+    if k.endswith("k"):
+        return float(k[:-1]) * 1000
+    if k.endswith("M"):
+        return float(k[:-1]) * 1000000
+    if k.endswith("N"):
+        return float(k[:-1]) * 1000000000
     return float(k)
 
 
@@ -29,7 +35,7 @@ def graph(df: []):
         print("Error: Any datas for country")
         exit()
 
-    if france_data.empty:
+    if belgium_data.empty:
         print("Error: Any datas for Belgium")
         exit()
 
@@ -47,13 +53,11 @@ def graph(df: []):
 
     plt.title("Population Projections")
 
-    max_pop = max(max(france_np), max(belgium_np))
-    y_ticks = [i * 1e7 for i in range(int(max_pop / 1e7) + 1)]
-    plt.yticks(y_ticks, ["{:,.0f}M".format(k / 1e6) for k in y_ticks])
-
     # Adjust x-axis ticks and limit axes
     plt.xticks(range(1800, 2051, 40), range(1800, 2051, 40))
     plt.xlim(1800, 2040)
+
+    plt.yticks([20000000, 40000000, 60000000], ["20M", "40M", "60M"])
 
     plt.ylabel("Population")
     plt.xlabel("Year")
