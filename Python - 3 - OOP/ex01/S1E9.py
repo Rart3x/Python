@@ -26,6 +26,6 @@ class Stark(Character):
         self.is_alive = is_alive
 
     def die(self):
-        '''Stark die function'''
+        '''Stark die method'''
 
         self.is_alive = not self.is_alive
