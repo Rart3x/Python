@@ -8,7 +8,7 @@ class calculator:
         total = 0
 
         for i in range(len(V1)):
-            total += V1[i] + V2[i]
+            total += V1[i] * V2[i]
         print("Dot product is:", total)
 
     @staticmethod
@@ -18,7 +18,7 @@ class calculator:
         vec = [0] * max(len(V1), len(V2))
 
         for i in range(len(V1)):
-            vec[i] += V1[i] + V2[i]
+            vec[i] += float(V1[i]) + float(V2[i])
         print("Add Vector is:", vec)
 
     @staticmethod
@@ -28,5 +28,5 @@ class calculator:
         vec = [0] * max(len(V1), len(V2))
 
         for i in range(len(V1)):
-            vec[i] += V1[i] - V2[i]
+            vec[i] += float(V1[i]) - float(V2[i])
         print("Sous Vector is:", vec)

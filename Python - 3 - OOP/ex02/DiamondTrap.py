@@ -2,6 +2,7 @@ from S1E7 import Baratheon, Lannister
 
 
 class King(Baratheon, Lannister):
+    '''King Class'''
 
     def __init__(self, first_name, is_alive=True):
         '''King Constructor'''
@@ -27,13 +28,21 @@ class King(Baratheon, Lannister):
         self.is_alive = False
 
     def get_eyes(self):
+        '''DiamonTrap getEyes'''
+
         return self.eyes
 
     def get_hairs(self):
+        '''DiamonTrap getHairs'''
+
         return self.hairs
 
     def set_eyes(self, eye):
+        '''DiamonTrap setEyes'''
+
         self.eyes = eye
 
     def set_hairs(self, hair):
+        '''DiamonTrap setHairs'''
+
         self.hairs = hair

@@ -11,16 +11,6 @@ class Character(ABC):
         self.first_name = first_name
         self.is_alive = is_alive
 
-    def __str__(self):
-        '''Character __str__ method'''
-
-        return f"Vector: ({self.eyes}, {self.hairs})"
-
-    def __repr__(self):
-        '''Character __repr__ method'''
-
-        return self.__str__()
-
     def die(self):
         '''Character die method'''
 

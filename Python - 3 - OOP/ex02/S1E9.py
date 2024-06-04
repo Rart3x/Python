@@ -23,6 +23,8 @@ class Character(ABC):
         return self.__str__()
 
     def die(self):
+        '''Character die method'''
+
         pass
 
 
