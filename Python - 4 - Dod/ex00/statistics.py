@@ -33,6 +33,7 @@ def quartile(vec: list) -> None:
     if len(vec) == 0:
         return print("ERROR")
 
+    vec.sort()
     n = len(vec)
 
     q1_i = n // 4
